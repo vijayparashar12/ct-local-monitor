@@ -1,0 +1,14 @@
+{
+  "name": "ct-local-monitor",
+  "version": "1.0.0",
+  "description": "this will monitor apis and build some kind of dashboard.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vijay (@vijayparashar12)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
