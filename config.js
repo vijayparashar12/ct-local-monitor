@@ -1,3 +1,3 @@
 module.exports = {
-    cities: ["bangalore", "mumbai", "new delhi", "chennai", "hyderabad","jaipur"]
+    cities: ["bangalore", "mumbai", "new delhi", "chennai", "hyderabad","jaipur","kolkata"]
 }
