@@ -35,7 +35,7 @@ app.get('/search', function (req, res) {
     }
 });
 
-app.listen(3000, function () {
+app.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {
     console.log('Example app listening on port 3000!');
 });
 
