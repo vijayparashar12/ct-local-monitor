@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 const http = require('http');
 const config = require('./config');
+const env          = process.env;
 
 app.get('/search', function (req, res) {
     const product = "ttd";
@@ -33,6 +34,11 @@ app.get('/search', function (req, res) {
         });
 
     }
+});
+
+app.get('/health',function(req,res){
+    res.writeHead(200);
+    res.end();
 });
 
 app.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {
