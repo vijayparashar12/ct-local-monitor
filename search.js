@@ -25,7 +25,7 @@ function search(product, city, startTime, callback) {
             gunzip.on('data', function (d) {
                 data = data + d.toString();
             }).on("end", function () {
-                executeCallback(startTime, callback, data);
+                executeCallback(startTime, callback, data, product, city);
             }).on("error", function (e) {
                 callback(e);
             });
@@ -33,7 +33,7 @@ function search(product, city, startTime, callback) {
             res.on('data', (d) => {
                 data = data + d;
             }).on('end', () => {
-                executeCallback(startTime, callback, data);
+                executeCallback(startTime, callback, data, product, city);
             });
         }
     });
@@ -44,10 +44,10 @@ function search(product, city, startTime, callback) {
     });
 }
 
-function executeCallback(startTime, callback, data) {
+function executeCallback(startTime, callback, data, product, city) {
     var totalTime = new Date().getTime() - startTime;
     console.log('No more data in response.');
-    callback(null, data, totalTime);
+    callback(null, data, totalTime, product, city);
 }
 
 module.exports = search;

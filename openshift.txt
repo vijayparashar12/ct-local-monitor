@@ -1,0 +1,13 @@
+MongoDB 2.4 database added.  Please make note of these credentials:
+
+   Root User:     admin
+   Root Password: EBJZAisJBSPj
+   Database Name: ctlocalmonitor
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+
+
+
+Redis is now configured with a default password ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5
+You can configure various Redis scaling and persistence modes by setting
+environment variables - consult the cartridge README for more info.
