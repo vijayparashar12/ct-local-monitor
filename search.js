@@ -25,7 +25,11 @@ function search(product, city, startTime, callback) {
             gunzip.on('data', function (d) {
                 data = data + d.toString();
             }).on("end", function () {
-                executeCallback(startTime, callback, data, product, city);
+                if (res.statusCode == 200) {
+                    executeCallback(startTime, callback, data, product, city);
+                } else {
+                    callback(data)
+                }
             }).on("error", function (e) {
                 callback(e);
             });
@@ -33,7 +37,11 @@ function search(product, city, startTime, callback) {
             res.on('data', (d) => {
                 data = data + d;
             }).on('end', () => {
-                executeCallback(startTime, callback, data, product, city);
+                if (res.statusCode == 200) {
+                    executeCallback(startTime, callback, data, product, city);
+                } else {
+                    callback(data)
+                }
             });
         }
     });

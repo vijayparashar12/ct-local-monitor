@@ -6,6 +6,7 @@ var app = express();
 var search = require('./search');
 
 app.use('/map', express.static('html'));
+app.use('/javascript', express.static('javascript'));
 app.get('/search', function (req, res) {
     var count = 0;
     var report = {};
@@ -68,5 +69,7 @@ app.get('/health', function (req, res) {
 });
 
 app.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {
-    console.log('app listening on port ' + env.NODE_PORT || 3000, env.NODE_IP);
+    var _ip  = env.NODE_IP || 'localhost';
+    var _port = env.NODE_PORT || 3000;
+    console.log('app listening on ' + _ip, _port);
 });
