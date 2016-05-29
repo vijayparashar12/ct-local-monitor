@@ -11,3 +11,33 @@ Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
 Redis is now configured with a default password ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5
 You can configure various Redis scaling and persistence modes by setting
 environment variables - consult the cartridge README for more info.
+
+
+
+#Deploying to openshift
+
+Step 1. clone the repo form github with below command.
+
+    git clone https://github.com/vijayparashar12/ct-local-monitor.git
+
+Step 2. Add new remote location to repo.
+
+    git remote add openshift ssh://57497a2389f5cf2cdc000110@ctlocalmonitor-vijayparashar12.rhcloud.com/~/git/ctlocalmonitor.git/
+
+Step 3. Verify the remote is added
+
+    git remote -v
+    openshift	ssh://57497a2389f5cf2cdc000110@ctlocalmonitor-vijayparashar12.rhcloud.com/~/git/ctlocalmonitor.git/ (fetch)
+    openshift	ssh://57497a2389f5cf2cdc000110@ctlocalmonitor-vijayparashar12.rhcloud.com/~/git/ctlocalmonitor.git/ (push)
+    origin	https://github.com/vijayparashar12/ct-local-monitor.git (fetch)
+    origin	https://github.com/vijayparashar12/ct-local-monitor.git (push)
+
+Step 4. Push master to openshift
+
+    git push openshift master
+
+Step 4.1 once openshift is added as remote, you can always deploy using 
+
+    git push openshift master
+
+Step 5. Push your changes to origin master as well.
